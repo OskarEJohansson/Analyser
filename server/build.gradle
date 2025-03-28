@@ -1,0 +1,31 @@
+plugins {
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.ktor)
+}
+
+group = 'dev.OskarJohansson'
+version = '1.0-SNAPSHOT'
+
+
+dependencies {
+    implementation(libs.ktor.server.core)
+    implementation(libs.ktor.server.netty)
+    implementation(libs.kotlin.test.junit)
+    implementation(libs.ktor.server.content.negotiation)
+    implementation(libs.ktor.serialization.kotlinx.json)
+    implementation(libs.ktor.server.cors)
+    implementation(libs.kotlinx.serialization.json)
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.kotlin.test.junit)
+    testImplementation(libs.ktor.server.test.host)
+    implementation(project(":core"))
+    implementation(project(":crud"))
+    implementation(project(":commons"))
+}
+
+test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(23)
+}
