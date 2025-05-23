@@ -5,14 +5,14 @@ import io.ktor.server.routing.*
 import io.ktor.util.reflect.*
 import model.request.AnalyzeRequest
 import model.response.AnalyzeResponse
+import model.secrets.Secrets
+import service.AnalyzerService
 
-import service.AnalyzerService.analyze
 
-fun Route.analyzeRoutes() {
+fun Route.analyzeRoutes(secrets: Secrets) {
     post("/api/v1/analyze") {
-        println("inside Analyze")
         val input = call.receive<AnalyzeRequest>()
-        val result = analyze(input)
+        val result = AnalyzerService().analyzeWithGemini2Lite(input, secrets)
         call.respond(
             result,
             typeInfo = TypeInfo(AnalyzeResponse::class)

@@ -11,20 +11,16 @@ import io.ktor.server.routing.*
 import kotlinx.serialization.json.Json
 
 fun Application.module() {
-    val env = environment.config.propertyOrNull("ktor.environment")?.getString() ?: "dev"
-    configureCors(env)
-    routing {
-        analyzeRoutes()
-    }
-
     install(ContentNegotiation) {
         json(
             Json {
                 ignoreUnknownKeys = true
                 isLenient = true
                 prettyPrint = true
-            }
-        )
+            })
+    }
+    routing {
+        analyzeRoutes(Config.SecretsLoader.init())
     }
 }
 
@@ -43,6 +39,7 @@ fun Application.configureCors(env: String) {
         allowMethod(HttpMethod.Delete)
         allowMethod(HttpMethod.Patch)
         allowHeader(HttpHeaders.Authorization)
+        parseAndSortContentTypeHeader("application/json")
         allowHeader("MyCustomHeader")
     }
 }

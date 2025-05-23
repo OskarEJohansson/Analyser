@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 group = "dev.OskarJohansson"
@@ -12,6 +13,9 @@ repositories {
 dependencies {
     implementation(libs.slf4j.api)
     implementation(libs.logback.classic)
+    implementation(libs.ktor.client.core)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.serialization.json)
     implementation(project(":core"))
     implementation(project(":commons"))
     testImplementation(kotlin("test"))
