@@ -16,6 +16,7 @@ dependencies {
     implementation(libs.ktor.client.core)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.serialization.json)
+    implementation(libs.modelcontetxprotocol)
     implementation("io.ktor:ktor-client-core-jvm:3.1.1")
     implementation("io.ktor:ktor-client-apache:3.1.1")
     testImplementation(platform("org.junit:junit-bom:5.10.0"))

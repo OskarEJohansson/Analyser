@@ -5,8 +5,10 @@ rootProject.name = "Analyzer"
 include("server", "core", "crud", "commons", "mcp", "integration")
 
 dependencyResolutionManagement {
+
     repositories {
         mavenCentral()
         gradlePluginPortal()
     }
 }
+include("Cache")

@@ -1,4 +1,5 @@
-package client
+package clients
+
 
 import io.modelcontextprotocol.kotlin.sdk.CallToolResultBase
 import io.modelcontextprotocol.kotlin.sdk.Implementation
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory
 import java.lang.AutoCloseable
 
 
-private val LOG = LoggerFactory.getLogger("dev.oskarjohansson.mcp.McpClient")
+private val LOG = LoggerFactory.getLogger("clients/McpClient.kt")
 
 class McpClient : AutoCloseable {
     private val mcp: Client = Client(clientInfo = Implementation(name = "Mcp Test Client", version = "0.0.1") )
@@ -40,7 +41,6 @@ class McpClient : AutoCloseable {
         }
     }
 
-
     override fun close() {
         if(isConnected){
             LOG.info("Closing MCP Client connection...")
@@ -55,4 +55,6 @@ class McpClient : AutoCloseable {
             runBlocking { mcp.close() }
         }
     }
+
+
 }
