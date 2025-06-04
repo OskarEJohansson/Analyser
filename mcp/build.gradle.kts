@@ -1,9 +1,8 @@
-
-
 plugins {
     alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin.serialization)
+    id("application")
 }
-
 
 group = "dev.OskarJohansson"
 version = "unspecified"
@@ -14,10 +13,8 @@ repositories {
 }
 
 dependencies {
-    implementation(libs.slf4j.api)
-    implementation(libs.logback.classic)
-    implementation(project(":core"))
-    implementation(project(":commons"))
+    implementation(libs.modelcontetxprotocol)
+    implementation(libs.slf4j.simple)
     testImplementation(kotlin("test"))
 }
 

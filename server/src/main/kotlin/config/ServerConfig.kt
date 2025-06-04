@@ -1,5 +1,6 @@
 package config
 
+import config.IntegrationModule.provideGeminiClient
 import controllers.analyzeRoutes
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
@@ -7,7 +8,6 @@ import io.ktor.server.application.*
 import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.plugins.cors.routing.*
 import io.ktor.server.routing.*
-
 import kotlinx.serialization.json.Json
 
 fun Application.module() {
@@ -19,8 +19,10 @@ fun Application.module() {
                 prettyPrint = true
             })
     }
+
+    val geminiClient = provideGeminiClient()
     routing {
-        analyzeRoutes(Config.SecretsLoader.init())
+        analyzeRoutes(geminiClient)
     }
 }
 

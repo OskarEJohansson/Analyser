@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktor)
     alias(libs.plugins.kotlin.serialization)
-
 }
 
 application {
@@ -16,6 +15,9 @@ version = '1.0-SNAPSHOT'
 dependencies {
     implementation(project(":crud"))
     implementation(project(":core"))
+    implementation(project(":mcp"))
+    implementation(project(":integration"))
+    implementation(libs.modelcontetxprotocol)
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.netty)
     implementation(libs.ktor.server.content.negotiation)
