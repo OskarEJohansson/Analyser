@@ -18,14 +18,20 @@ dependencies {
     implementation(project(":mcp"))
     implementation(project(":integration"))
     implementation(libs.modelcontetxprotocol)
-    implementation(libs.ktor.server.core)
-    implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.call.logging)
     implementation(libs.ktor.server.content.negotiation)
+    implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.cors)
+    implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.statuspages)
     implementation(libs.kotlin.test.junit)
     implementation(libs.ktor.serialization.kotlinx.json)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.coroutines.core)
+    implementation 'io.ktor:ktor-server-core:3.1.1'
+    implementation 'io.ktor:ktor-server-host-common:3.1.1'
+    implementation 'io.ktor:ktor-server-status-pages:3.1.1'
+    implementation 'io.ktor:ktor-server-core:3.1.1'
     testImplementation(libs.kotlin.test)
     testImplementation(libs.kotlin.test.junit)
     testImplementation(libs.ktor.server.test.host)

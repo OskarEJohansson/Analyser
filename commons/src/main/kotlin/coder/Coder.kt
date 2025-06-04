@@ -1,4 +1,4 @@
-package Coder
+package coder
 
 import kotlin.reflect.KClass
 

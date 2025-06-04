@@ -1,4 +1,4 @@
-package Coder
+package coder
 
 import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.json.Json
