@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/commons" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/crud" />
+            <option value="$PROJECT_DIR$/integration" />
+            <option value="$PROJECT_DIR$/mcp" />
             <option value="$PROJECT_DIR$/server" />
           </set>
         </option>
