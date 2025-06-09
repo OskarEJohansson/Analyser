@@ -1,4 +1,4 @@
-package model.secrets
+package secrets
 
 import kotlinx.serialization.Serializable
 
