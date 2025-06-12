@@ -12,3 +12,4 @@ dependencyResolutionManagement {
     }
 }
 include("Cache")
+include("kafka")

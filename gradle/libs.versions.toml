@@ -1,4 +1,5 @@
 [versions]
+apache-kafka = "4.0.0"
 kotlin-version = "2.1.20"
 ktor-version = "3.1.1"
 kotlinx-version = "1.7.3"
@@ -9,6 +10,7 @@ slf4j-api-version = "2.0.9"
 slf4j-simple = "2.0.9"
 
 [libraries]
+apache-kafka-client = { module = "org.apache.kafka:kafka-clients", version.ref = "apache-kafka" }
 ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor-version" }
 ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor-version" }
 ktor-client-content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor-version" }
