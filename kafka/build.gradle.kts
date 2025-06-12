@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "2.1.20"
+    alias(libs.plugins.kotlin.jvm)
 }
 
 group = "dev.OskarJohansson"
@@ -10,7 +10,10 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":commons"))
+    implementation(project(":core"))
     implementation(libs.apache.kafka.client)
+    implementation(libs.slf4j.api)
     testImplementation(kotlin("test"))
 }
 

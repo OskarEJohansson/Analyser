@@ -8,8 +8,8 @@ application {
     mainClass.set("MainKt")
 }
 
-group = 'dev.OskarJohansson'
-version = '1.0-SNAPSHOT'
+group = "dev.OskarJohansson"
+version = "1.0-SNAPSHOT"
 
 
 dependencies {
@@ -28,16 +28,12 @@ dependencies {
     implementation(libs.ktor.serialization.kotlinx.json)
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.kotlinx.coroutines.core)
-    implementation 'io.ktor:ktor-server-core:3.1.1'
-    implementation 'io.ktor:ktor-server-host-common:3.1.1'
-    implementation 'io.ktor:ktor-server-status-pages:3.1.1'
-    implementation 'io.ktor:ktor-server-core:3.1.1'
     testImplementation(libs.kotlin.test)
     testImplementation(libs.kotlin.test.junit)
     testImplementation(libs.ktor.server.test.host)
 }
 
-test {
+tasks.test {
     useJUnitPlatform()
 }
 kotlin {
